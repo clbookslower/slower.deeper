@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>욕망으로서의 글쓰기 — 슬로어 작가살롱 1기 2주차</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', sans-serif; background: #fff; color: #111; font-size: 16px; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+.page { max-width: 720px; margin: 0 auto; padding: 72px 24px 100px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #aaa; margin-bottom: 48px; }
+.breadcrumb a { color: #aaa; text-decoration: none; }
+.breadcrumb .sep { opacity: 0.4; }
+.article-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
+.meta { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.badge { font-family: 'DM Mono', monospace; font-size: 11px; padding: 3px 12px; border-radius: 100px; letter-spacing: 0.06em; }
+.badge-guide { background: #FAEEDA; color: #854F0B; }
+.badge-article { background: #E6F1FB; color: #185FA5; }
+.badge-salon { background: #EAF3DE; color: #3B6D11; }
+.dot { color: #ddd; font-size: 12px; }
+.meta-text { font-size: 12px; color: #999; font-family: 'DM Mono', monospace; }
+h1 { font-family: 'Noto Serif KR', serif; font-size: 34px; font-weight: 400; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 14px; }
+.subtitle { font-family: 'Noto Serif KR', serif; font-size: 17px; font-weight: 300; color: #777; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; padding: 3px 12px; border-radius: 100px; background: #f5f5f5; color: #888; font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
+.step { display: flex; gap: 24px; margin-bottom: 52px; align-items: flex-start; }
+.step-num { width: 32px; height: 32px; border-radius: 50%; background: #2C3B2D; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 12px; flex-shrink: 0; margin-top: 6px; }
+.step-body { flex: 1; }
+.step-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 400; margin-bottom: 16px; line-height: 1.4; letter-spacing: -0.01em; }
+.step-body p { color: #444; margin-bottom: 14px; font-size: 15px; line-height: 1.95; }
+.callout { background: #f9f9f9; border-left: 2.5px solid #111; padding: 18px 22px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+.callout-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; }
+.callout p { font-size: 14px; color: #333; line-height: 1.8; margin: 0; }
+blockquote { margin: 28px 0; padding: 0 0 0 24px; border-left: 1.5px solid #ddd; }
+blockquote p { font-family: 'Noto Serif KR', serif; font-size: 17px; font-style: italic; color: #333; line-height: 1.8; margin-bottom: 8px; }
+blockquote cite { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa; font-style: normal; letter-spacing: 0.06em; }
+.haiku { text-align: center; padding: 32px 24px; margin: 28px 0; background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; }
+.haiku p { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 300; color: #222; line-height: 2.2; margin: 0; }
+.haiku cite { display: block; margin-top: 16px; font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; letter-spacing: 0.08em; }
+.concept { display: flex; border: 1px solid #f0f0f0; border-radius: 12px; overflow: hidden; margin: 24px 0; }
+.concept-term { background: #111; color: #fff; padding: 20px 22px; display: flex; align-items: center; justify-content: center; min-width: 120px; }
+.concept-term span { font-family: 'Noto Serif KR', serif; font-size: 16px; writing-mode: vertical-rl; letter-spacing: 0.1em; }
+.concept-def { padding: 20px 22px; flex: 1; }
+.concept-def .term-en { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
+.concept-def p { font-size: 14px; color: #444; line-height: 1.8; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+.col-card { background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; padding: 20px 22px; }
+.col-card h3 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 14px; }
+.col-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.col-card ul li { font-size: 14px; color: #444; padding-left: 16px; position: relative; line-height: 1.6; }
+.col-card ul li::before { content: '—'; position: absolute; left: 0; color: #ccc; }
+.cta-box { background: #2C3B2D; border-radius: 16px; padding: 40px; text-align: center; margin-top: 64px; }
+.cta-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #7a9c7b; margin-bottom: 16px; }
+.cta-text { font-family: 'Noto Serif KR', serif; color: #f0ece4; font-size: 20px; font-weight: 300; line-height: 1.7; margin-bottom: 28px; }
+.cta-sub { font-size: 13px; color: #7a9c7b; line-height: 1.7; }
+.footnote { font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; letter-spacing: 0.06em; margin-top: 64px; padding-top: 24px; border-top: 1px solid #f5f5f5; }
+.footnote p { margin-bottom: 6px; font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; }
+p { color: #444; margin-bottom: 16px; }
+.section-intro { font-size: 15px; color: #555; line-height: 1.95; margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid #f5f5f5; }
+@media (max-width: 600px) { h1 { font-size: 26px; } .two-col { grid-template-columns: 1fr; } .concept { flex-direction: column; } .concept-term { writing-mode: horizontal-tb; min-width: auto; } .concept-term span { writing-mode: horizontal-tb; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 브레드크럼 -->
+  <nav class="breadcrumb">
+    <a href="#">슬로어</a>
+    <span class="sep">/</span>
+    <a href="#">작가살롱 1기</a>
+    <span class="sep">/</span>
+    <span>2주차</span>
+  </nav>
+
+  <!-- 아티클 헤더 -->
+  <header class="article-header">
+    <div class="meta">
+      <span class="badge badge-salon">Salon</span>
+      <span class="dot">·</span>
+      <span class="meta-text">Roland Barthes · 기원과 출발점</span>
+    </div>
+    <h1>욕망으로서의 글쓰기</h1>
+    <p class="subtitle">나는 왜 글을 쓰는가—바르트가 제안하는 여섯 개의 출발점</p>
+    <div class="tags">
+      <span class="tag">Roland Barthes</span>
+      <span class="tag">글쓰기</span>
+      <span class="tag">욕망</span>
+      <span class="tag">독서</span>
+      <span class="tag">영감</span>
+    </div>
+  </header>
+
+  <!-- 도입 -->
+  <p class="section-intro">
+    바르트는 묻는다: 나는 왜 글을 쓰는가. 대의명분도, 사회적 목적도, 도덕적 이유도—그것들은 경시될 수 없다. 그러나 바르트는 그것들을 <em>알리바이</em>라고 부른다. 자신의 욕망이 그 자리에 없다는 증명. 이 강의록은 글쓰기의 진짜 기원을 찾아가는 여섯 단계의 사유다.
+  </p>
+
+  <!-- 1. 알리바이와 욕망 -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h2 class="step-title">알리바이와 욕망</h2>
+      <p>법률 용어로 알리바이는 '나는 그 장소에 없었다'는 증명이다. 글쓰기의 알리바이란—나의 욕망이 거기 없다는 증명. 사회적 이유로 쓰는 사람은 자신의 욕망이 어디에 있는지 묻지 않는다. 혹은 묻기를 두려워한다.</p>
+      <div class="callout">
+        <div class="callout-label">핵심</div>
+        <p>사르트르의 '나쁜 믿음(mauvaise foi)'처럼—자유를 직면하지 않기 위해 외부의 필연성을 내세우는 것. 바르트는 명석한 상태에서 자신이 욕망을, 강한 의미에서의 욕망을 충족시키기 위해 글을 쓴다는 것을 안다.</p>
+      </div>
+      <p>그는 이 욕망이 글쓰기의 기원이라고 단정하지 않는다. 욕망을 결정하는 요인들을 완전히 파악할 수 없기 때문에. 다만 이것은 말할 수 있다: 글쓰기 욕망은 그가 파악할 수 있는 출발점을 가지고 있다고.</p>
+    </div>
+  </div>
+
+  <!-- 2. 환희—출발점 -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h2 class="step-title">환희 — 출발점은 읽기다</h2>
+      <p>그 출발점은 읽기다. 다른 사람들이 집필한 텍스트들을 읽으면서 얻는 쾌락, 기쁨, 환희, 충족. <em>나는 읽었기 때문에 쓴다.</em></p>
+      <p>그러나 독서의 기쁨이 곧 쓰고 싶다는 욕망으로 이어지는 것은 아니다. 대부분의 독자는 그냥 독자로 남는다. 이행이 일어나려면 강도의 차이가 작동해야 한다. 바르트가 말하는 글쓰기의 생산적 기쁨은 일반적인 읽기의 기쁨과 다른 무엇이다—환희(éblouissement), 법열, 변용, 계시, 떨림.</p>
+
+      <blockquote>
+        <p>이 텍스트는 나를 애무합니다.</p>
+        <cite>— Roland Barthes, 샤토브리앙의 텍스트에 대하여</cite>
+      </blockquote>
+
+      <p>레비나스는 애무를 타자성과의 만남으로 정의했다—애무는 상대를 소유하지 않으면서 상대에게 닿는 행위. 텍스트는 나를 완전히 장악하지 않으면서 나를 건드린다. 그 접촉에서 결핍이 생겨난다: <em>왜 내가 이것을 만들지 않았는가.</em></p>
+      <p>글쓰기 욕망은 독서 일반에서 오는 것이 아니라 개별적인, 특정한 독서에서 온다. 몇몇 텍스트와의 만남에서 글쓰기 희망이 태어난다.</p>
+    </div>
+  </div>
+
+  <!-- 3. 볼루피아와 포토스 -->
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h2 class="step-title">글쓰기 희망 — 볼루피아와 포토스</h2>
+
+      <blockquote>
+        <p>희망이란 욕망하는 기억이다.</p>
+        <cite>— Balzac</cite>
+      </blockquote>
+
+      <p>아름다운 모든 작품은 욕망된 작품이지만 동시에 불완전하고 실패한 작품처럼 기능한다—내가 직접 그 작품을 만들지 않았기 때문에. 글쓰기는 다시 쓰고자 하는 욕망이다.</p>
+
+      <div class="two-col">
+        <div class="col-card">
+          <h3>Volupia · 볼루피아</h3>
+          <ul>
+            <li>완전히 충족된 욕망의 여신</li>
+            <li>독서에 의해 충족된 쾌락</li>
+            <li>그 작품을 만들어야 하는 고통을 느끼지 않는 상태</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3>Pothos · 포토스</h3>
+          <ul>
+            <li>부재하는 사물에 대한 애절한 욕망</li>
+            <li>독서의 쾌락 + 글쓰기 욕망의 결여</li>
+            <li>충족과 결핍의 경계에서 태어나는 욕망</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>플라톤의 『향연』에서 에로스는 풍요(Poros)와 결핍(Penia) 사이에서 태어난다. 바르트의 포토스도 마찬가지다: 아름다운 텍스트를 사랑할 수 있는 능력(풍요)과 그것을 직접 만들지 못했다는 사실(결핍) 사이에서 글쓰기 욕망이 태어난다. 욕망은 결핍에서 오지 않는다—충족과 결핍의 경계에서 온다.</p>
+    </div>
+  </div>
+
+  <!-- 4. 영감 -->
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h2 class="step-title">모방이 아닌 영감</h2>
+      <p>읽기에서 글쓰기로의 이행은 모방처럼 보인다. 그러나 바르트는 이 단어를 즉시 포기한다. 엄밀한 모방은 두 가지뿐이다—책의 내용을 삶에서 글자 그대로 실현하기(응용), 또는 책을 문자 그대로 베끼기. 둘 다 글쓰기의 캐리커처다.</p>
+
+      <div class="concept">
+        <div class="concept-term"><span>영감</span></div>
+        <div class="concept-def">
+          <span class="term-en">Inspiration · 나르시시즘적 변형</span>
+          <p>타인의 작품이 내부로 이행하려면, 내가 이 작품을 나를 위해 집필된 것으로 정의하는 동시에 그것을 사랑의 힘으로 다른 것으로 만들어야 한다. 영향은 불안이 아니라 사랑이다.</p>
+        </div>
+      </div>
+
+      <div class="haiku">
+        <p>가마우지를 모방하는 어린이는<br>더 뛰어나다<br>진짜 가마우지보다</p>
+        <cite>— 잇사(一茶)</cite>
+      </div>
+
+      <p>시인은 모방하는 어린아이를 모방하지 않는다. 시인은 그 어린아이를 발화한다. 문학은 직접적인 모방에서 태어나는 것이 아니라 이 세계에 대한 증식, 발화 행위에서 태어난다.</p>
+      <p>해럴드 블룸은 영향을 불안으로 읽었다. 바르트는 정반대의 독해를 한다—영향은 불안이 아니라 에로스적 변형이다. 선행 텍스트는 위협이 아니라 변형의 매개다. 내가 숭배했던 이방인이 나를 나의 내부에 있는 이방인으로 이끈다.</p>
+    </div>
+  </div>
+
+  <!-- 5. 편집 -->
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h2 class="step-title">편집(偏執) — 욕망의 과잉</h2>
+      <p>글쓰기 욕망을 진정으로 가진 주체에게 이 욕망은 과잉으로만 존재한다. 플로베르의 '길들일 수 없는 환상', 카프카의 밤의 낙서, 바르트 자신이 대화 중에 수첩을 꺼내 문장-감각을 적는 행위.</p>
+
+      <div class="callout">
+        <div class="callout-label">프로이트 · 욕동과 본능</div>
+        <p>본능(Instinkt)은 충족되면 사라진다. 욕동(Trieb)은 충족 이후에도 대상 주위를 계속 순환한다. 글쓰기 욕망은 욕동에 가깝다—한 권을 완성해도 충동은 돌아온다. 쓴다는 것이 욕망을 해소하는 것이 아니라 욕망을 갱신하는 것.</p>
+      </div>
+
+      <p>바르트는 이해할 수 없다고 말한다: 어떻게 글을 쓰지 않은 채 시간을 잘 보낼 수 있는지를. 1주차의 언어로 돌아오면, 이것은 아케디아의 역이다—아케디아가 욕망을 가지고도 행위로 나아가지 못하는 상태라면, 편집증은 행위 충동이 존재의 전부를 점령한 상태다. 두 극단 사이 어딘가에 실제 글쓰기가 있다.</p>
+    </div>
+  </div>
+
+  <!-- 6. 세 명의 증인 -->
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <h2 class="step-title">고뇌에 찬 욕망 — 세 명의 증인</h2>
+      <p>글쓰기 욕망은 근심에 사로잡힌 욕망이다. 세 명의 증인이 있다.</p>
+
+      <blockquote>
+        <p>얼마나 빌어먹을 직업인가! 얼마나 어이없는 망상인가! 하지만 이 소중한 고통을 축복하자. 이것이 없다면 죽어야 할 것이다.</p>
+        <cite>— Gustave Flaubert</cite>
+      </blockquote>
+
+      <p>플로베르가 말하는 것은 글쓰기가 고통스럽다는 것이 아니다. 고통 자체가 글쓰기 욕망의 증거라는 것—하이데거가 불안을 진정한 실존의 개시(開示)로 읽었듯, 플로베르에게 고통은 욕망의 진정성을 보증한다.</p>
+
+      <blockquote>
+        <p>나로 하여금 이 끔찍한 일에 봉사하게 한 것은 게으름뿐만이 아니라 또한 공포, 글쓰기에 대한 전적인 공포였습니다.</p>
+        <cite>— Franz Kafka</cite>
+      </blockquote>
+
+      <p>블랑쇼는 글쓰기를 '불가능성의 경험'으로 정의했다. 카프카의 공포는 이 불가능성 앞에서의 공포다. 그러나 그는 계속 쓴다. 불가능성이 욕망을 소멸시키지 않고 욕망을 강화하기 때문에.</p>
+      <p>프루스트의 『잃어버린 시간을 찾아서』에는 단 하나의 이야기가 있다—글쓰기를 하고자 하는 한 주체의 이야기. 그것은 <em>스크립투리레(scripturire)</em>의 소설이다: '쓰기를 원하다'의 강조형—욕망이 행위가 아니라 상태가 된 것. 쓰는 것이 아니라 쓰고 싶음 속에 있는 것.</p>
+
+      <div class="callout">
+        <div class="callout-label">세 증인이 함께 말하는 것</div>
+        <p>글쓰기 욕망은 충족에 의해 해소되지 않는다. 플로베르는 평생 썼고 평생 고통받았다. 카프카는 공포에도 불구하고 썼다. 프루스트의 소설은 마지막 권에 가서야 쓰기를 시작하는 결심으로 끝난다. 욕망은 행위 이전에도, 행위 중에도, 행위 이후에도 남는다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-label">이번 주 살롱의 질문</div>
+    <p class="cta-text">나를 처음 쓰게 만든 텍스트는 무엇인가.<br>그 텍스트는 나를 어떻게 건드렸는가.</p>
+    <p class="cta-sub">글쓰기 욕망은 대상을 소유함으로써 해소되는 욕망이 아니라,<br>쓰는 행위 자체가 욕망을 새롭게 갱신하는 욕망이다.</p>
+  </div>
+
+  <!-- 하단 주석 -->
+  <footer class="footnote">
+    <p>REF · Roland Barthes, <em>Le Plaisir du texte</em> (1973) / <em>La Préparation du roman</em> (강의록, 1978–80)</p>
+    <p>REF · Emmanuel Levinas, <em>Totalité et Infini</em> (1961) — 애무와 타자성</p>
+    <p>REF · Harold Bloom, <em>The Anxiety of Influence</em> (1973)</p>
+    <p>REF · Maurice Blanchot, <em>L'Espace littéraire</em> (1955) — 불가능성의 경험</p>
+    <p>REF · Plato, <em>Symposium</em> — 에로스, 풍요와 결핍 사이</p>
+    <p>SALON · 슬로어 작가살롱 1기 · 2주차 강의록</p>
+  </footer>
+
+</div>
+</body>
+</html>
