@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하이쿠, 또는 진지한 관찰 — 슬로어 작가살롱 3주차</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #fff;
+  color: #111;
+  font-size: 16px;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+.page { max-width: 720px; margin: 0 auto; padding: 72px 24px 100px; }
+
+/* BREADCRUMB */
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em;
+  color: #aaa; margin-bottom: 48px;
+}
+.breadcrumb a { color: #aaa; text-decoration: none; }
+.breadcrumb a:hover { color: #555; }
+.breadcrumb .sep { opacity: 0.4; }
+
+/* HEADER */
+.article-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
+.meta {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 20px;
+}
+.badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; font-weight: 400;
+  padding: 3px 12px; border-radius: 100px;
+  letter-spacing: 0.06em;
+}
+.badge-guide { background: #FAEEDA; color: #854F0B; }
+.dot { color: #ddd; font-size: 12px; }
+.meta-text { font-size: 12px; color: #999; font-family: 'DM Mono', monospace; }
+
+h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 34px; font-weight: 400;
+  line-height: 1.35; letter-spacing: -0.02em;
+  margin-bottom: 14px; color: #111;
+}
+.subtitle {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 17px; font-weight: 300;
+  color: #777; line-height: 1.7; margin-bottom: 24px;
+  font-style: italic;
+}
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+  font-size: 12px; padding: 3px 12px;
+  border-radius: 100px;
+  background: #f5f5f5; color: #888;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+/* STEP */
+.step {
+  display: flex; gap: 24px;
+  margin-bottom: 52px;
+  align-items: flex-start;
+}
+.step-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #111; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; flex-shrink: 0; margin-top: 6px;
+}
+.step-body { flex: 1; }
+.step-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px; font-weight: 400;
+  margin-bottom: 16px; color: #111;
+  line-height: 1.4; letter-spacing: -0.01em;
+}
+.step-body p { color: #444; margin-bottom: 14px; font-size: 15px; line-height: 1.95; }
+
+/* CALLOUT */
+.callout {
+  background: #f9f9f9;
+  border-left: 2.5px solid #111;
+  padding: 18px 22px;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+}
+.callout-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; font-weight: 400;
+  color: #888; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.callout p {
+  font-size: 14px; color: #333;
+  line-height: 1.8; margin: 0;
+}
+
+/* QUOTE */
+blockquote {
+  margin: 28px 0;
+  padding: 0 0 0 24px;
+  border-left: 1.5px solid #ddd;
+}
+blockquote p {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 17px; font-style: italic;
+  color: #333; line-height: 1.8;
+  margin-bottom: 8px;
+}
+blockquote cite {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: #aaa;
+  font-style: normal; letter-spacing: 0.06em;
+}
+
+/* HAIKU BLOCK */
+.haiku {
+  text-align: center;
+  padding: 32px 24px;
+  margin: 28px 0;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+}
+.haiku p {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 18px; font-weight: 300;
+  color: #222; line-height: 2.2;
+  margin: 0;
+}
+.haiku cite {
+  display: block; margin-top: 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: #bbb;
+  letter-spacing: 0.08em;
+}
+
+/* TWO COL */
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 24px 0;
+}
+.col-card {
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px; padding: 20px 22px;
+}
+.col-card h3 {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; font-weight: 400;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #888; margin-bottom: 14px;
+}
+.col-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.col-card ul li {
+  font-size: 14px; color: #444;
+  padding-left: 16px; position: relative; line-height: 1.6;
+}
+.col-card ul li::before { content: '—'; position: absolute; left: 0; color: #ccc; }
+
+/* CONCEPT BOX */
+.concept {
+  display: flex; gap: 0;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px; overflow: hidden;
+  margin: 24px 0;
+}
+.concept-term {
+  background: #111; color: #fff;
+  padding: 20px 22px;
+  display: flex; align-items: center; justify-content: center;
+  min-width: 120px;
+}
+.concept-term span {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px; writing-mode: vertical-rl;
+  letter-spacing: 0.1em;
+}
+.concept-def { padding: 20px 22px; flex: 1; }
+.concept-def .term-en {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: #aaa; letter-spacing: 0.1em;
+  margin-bottom: 8px; display: block;
+}
+.concept-def p { font-size: 14px; color: #444; line-height: 1.8; margin: 0; }
+
+/* CTA */
+.cta-box {
+  background: #2C3B2D; border-radius: 16px;
+  padding: 40px; text-align: center; margin-top: 64px;
+}
+.cta-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: #666;
+  margin-bottom: 16px;
+}
+.cta-text {
+  font-family: 'Noto Serif KR', serif;
+  color: #fff; font-size: 20px; font-weight: 300;
+  line-height: 1.7; margin-bottom: 28px;
+}
+.cta-sub { font-size: 13px; color: #666; line-height: 1.7; }
+
+/* DIVIDER */
+.divider { border: none; border-top: 1px solid #f0f0f0; margin: 48px 0; }
+
+/* FOOTNOTE */
+.footnote {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: #bbb; letter-spacing: 0.06em;
+  margin-top: 64px; padding-top: 24px;
+  border-top: 1px solid #f5f5f5;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 26px; }
+  .two-col { grid-template-columns: 1fr; }
+  .concept { flex-direction: column; }
+  .concept-term { writing-mode: horizontal-tb; min-width: auto; }
+  .concept-term span { writing-mode: horizontal-tb; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="breadcrumb">
+    <a href="#">슬로어 작가살롱</a>
+    <span class="sep">/</span>
+    <span>1기 · 3주차</span>
+  </div>
+
+  <header class="article-header">
+    <div class="meta">
+      <span class="badge badge-guide">강의노트</span>
+      <span class="dot">·</span>
+      <span class="meta-text">슬로어 작가살롱 1기</span>
+      <span class="dot">·</span>
+      <span class="meta-text">3주차</span>
+    </div>
+    <h1>하이쿠, 또는 진지한 관찰</h1>
+    <p class="subtitle">형식, 이것임, 개별화</p>
+    <div class="tags">
+      <span class="tag">#하이쿠</span>
+      <span class="tag">#진지한관찰</span>
+      <span class="tag">#제임스우드</span>
+      <span class="tag">#롤랑바르트</span>
+      <span class="tag">#이것임</span>
+    </div>
+  </header>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h2 class="step-title">두 개의 질문</h2>
+      <p>제임스 우드는 하버드 문학비평 교수이자 『뉴요커』 비평가다. 롤랑 바르트는 1979년 콜레주 드 프랑스에서 하이쿠를 강의한다. 두 사람은 같은 질문 앞에 서 있다.</p>
+
+      <div class="callout">
+        <div class="callout-label">핵심 질문</div>
+        <p>어떻게 순간을 포착하는가. 어떻게 지나가는 것이 언어 안에 남는가.</p>
+      </div>
+
+      <p>우드는 체호프의 단편 「키스」에서 출발한다. 장교 랴보비치는 어두운 방에서 낯선 여자에게 실수로 키스를 받는다. 이 순간이 그의 내부에서 무한히 팽창한다.</p>
+
+      <blockquote>
+        <p>"그는 이야기를 다 했는데 그것이 그토록 짧은 시간만 걸렸다는 사실에 놀랐다. 그는 그 키스에 대해 밤새도록 이야기할 수 있다고 생각했던 것이다."</p>
+        <cite>체호프, 「키스」</cite>
+      </blockquote>
+
+      <p>우리는 내부적 팽창주의자들—공적인 리듬과 사적인 리듬 사이에서 살아가는 존재들. 내부에서는 무한하지만 외부로 나오면 1분인 이야기를 안고 사는 존재들.</p>
+      <p>바르트가 하이쿠에서 발견하는 것도 정확히 이것이다. 17음절이 내부에서 무한히 열린다.</p>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h2 class="step-title">진지한 관찰 — 디테일의 윤리</h2>
+      <p>우드가 말하는 진지한 관찰은 기술이 아니라 윤리에 가깝다. 체호프적 눈—"잘 그리고 진지하게 관찰하는 능력, 선택의 천재성." 무엇을 보는가가 아니라 어떻게 보는가.</p>
+
+      <blockquote>
+        <p>"형식의 프리즈에서 튀어나온 삶의 조각들, 우리에게 만져달라고 애원하는 것들."</p>
+        <cite>제임스 우드, 『인생에 가장 가까운 것』</cite>
+      </blockquote>
+
+      <div class="concept">
+        <div class="concept-term"><span>이것임</span></div>
+        <div class="concept-def">
+          <span class="term-en">haecceitas — 둔스 스코투스 / 들뢰즈</span>
+          <p>봄이 아니라 이 봄. 여자가 아니라 이 여자의 목소리. 방이 아니라 이 방의 안개. 언어가 보편에서 특수로 내려앉는 순간.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">핵심 포인트</div>
+        <p>읽기와 쓰기와 살기가 서로를 훈련시킨다. 이 순환이 진지한 관찰의 구조다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h2 class="step-title">하이쿠는 이것임의 형식이다</h2>
+      <p>형식 자체가 이것임을 강제한다—17음절의 압축이 선택을 강요하고, 선택이 개별성을 생산한다.</p>
+
+      <div class="haiku">
+        <p>겨울 바람이 불어 대자<br>고양이들의 눈이<br>깜박댄다</p>
+        <cite>마쓰오 바쇼</cite>
+      </div>
+
+      <p>겨울은 서술되지 않는다. 고양이 눈의 깜박임이 겨울을 불러낸다. 구체성이 추상을 호출한다—이것이 이것임의 작동 방식이다. 이것임은 설명이 아니라 현전이다.</p>
+
+      <div class="haiku">
+        <p>안개 낀 날<br>커다란 방이<br>휑하고 고요하네</p>
+        <cite>고바야시 잇사</cite>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">핵심 포인트</div>
+        <p>우드에게 진지한 관찰은 독자가 텍스트에서 하는 것이다. 바르트에게 하이쿠는 쓰는 행위 자체가 진지한 관찰의 훈련이다. 쓰는 것이 보는 것이다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h2 class="step-title">두 개의 시간 박자와 하이쿠</h2>
+      <p>우리는 두 개의 시간 박자 안에서 산다. 공적인 리듬과 사적인 리듬. 이 둘은 비동기적이다.</p>
+
+      <div class="two-col">
+        <div class="col-card">
+          <h3>랴보비치의 키스</h3>
+          <ul>
+            <li>내부: 밤새 이야기할 수 있는 사건</li>
+            <li>외부: 1분짜리 이야기</li>
+            <li>내면의 시간 ≠ 시계 시간</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3>하이쿠의 역설</h3>
+          <ul>
+            <li>외부: 가장 짧다 — 17음절</li>
+            <li>내부: 닫히지 않는 공간</li>
+            <li>열리지 않는 채로 완결된다</li>
+          </ul>
+        </div>
+      </div>
+
+      <blockquote>
+        <p>"하이쿠는 간단하지만 끝나지 않고 또 닫히지도 않는다."</p>
+        <cite>롤랑 바르트</cite>
+      </blockquote>
+
+      <p>여백이 팽창의 공간이다. 마(間)는 독자의 내부 시간이 들어오는 문이다.</p>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h2 class="step-title">삶의 잉여 — 관찰의 윤리로서의 글쓰기</h2>
+
+      <blockquote>
+        <p>"삶은 항상 불가피한 잉여를 포함할 것이다. 여분의 여백, 항상 우리에게 필요한 것보다 많은 영역: 더 많은 사물들, 더 많은 인상들, 더 많은 기억들."</p>
+        <cite>제임스 우드</cite>
+      </blockquote>
+
+      <p>진지한 관찰은 이 잉여 안에서 이것임을 찾는 것. 필요한 것보다 많은 것들 중에서 만져달라고 애원하는 것을 알아채는 것.</p>
+
+      <div class="callout">
+        <div class="callout-label">핵심 포인트</div>
+        <p>글쓰기는 잉여를 처리하는 방식이 아니다. 잉여와 함께 머무는 방식이다. 안개 낀 날, 커다란 방, 그 휑함—이것들은 아무것도 설명하지 않는다. 그냥 있다. 그것이 충분하다.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="col-card">
+          <h3>우드의 정의</h3>
+          <ul>
+            <li>문학은 삶의 흐릿함을 가시적이고 선명하게 만드는 수단</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3>바르트의 정의</h3>
+          <ul>
+            <li>하이쿠는 "진리의 유도체"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <h2 class="step-title">관찰에서 글쓰기로</h2>
+      <p>1주차의 아케디아, 2주차의 글쓰기 욕망—그것들이 3주차에 이르러 하나의 실천으로 좁혀진다.</p>
+      <p>많은 사람들이 쓸 것이 없다고 느끼면서 쓰지 않는다. 그러나—</p>
+
+      <div class="callout">
+        <div class="callout-label">핵심 포인트</div>
+        <p>관찰하지 않아서 없는 것이지, 없어서 쓰지 못하는 것이 아니다. 현재 날씨가 항상 있다.</p>
+      </div>
+
+      <div class="concept">
+        <div class="concept-term"><span>세 줄</span></div>
+        <div class="concept-def">
+          <span class="term-en">오늘의 실천</span>
+          <p>소설을 쓸 수 없어도, 에세이를 쓸 수 없어도—오늘의 날씨를 세 줄로 쓸 수 있다. 그 세 줄 안에 이것임이 있으면 된다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <div class="cta-label">이번 주 실천</div>
+    <p class="cta-text">지나가는 것이 거기 있었다는 사실을<br>언어 안에 놓는 것.<br>그것이 진지한 관찰이고,<br>그것이 글쓰기의 시작이다.</p>
+    <p class="cta-sub">오늘의 날씨를 세 줄로 써보세요.</p>
+  </div>
+
+  <div class="footnote">
+    슬로어 작가살롱 1기 · 3주차 강의노트<br>
+    참고: 제임스 우드 『인생에 가장 가까운 것』(2015) · 롤랑 바르트 콜레주 드 프랑스 강의(1979)
+  </div>
+
+</div>
+</body>
+</html>
