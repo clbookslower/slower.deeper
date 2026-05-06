@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데투르 — 슬로어 작가살롱 1기 4주차</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', sans-serif; background: #fff; color: #111; font-size: 16px; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+.page { max-width: 720px; margin: 0 auto; padding: 72px 24px 100px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #aaa; margin-bottom: 48px; }
+.breadcrumb a { color: #aaa; text-decoration: none; }
+.breadcrumb .sep { opacity: 0.4; }
+.article-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
+.meta { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.badge { font-family: 'DM Mono', monospace; font-size: 11px; padding: 3px 12px; border-radius: 100px; letter-spacing: 0.06em; }
+.badge-salon { background: #EAF3DE; color: #3B6D11; }
+.dot { color: #ddd; font-size: 12px; }
+.meta-text { font-size: 12px; color: #999; font-family: 'DM Mono', monospace; }
+h1 { font-family: 'Noto Serif KR', serif; font-size: 34px; font-weight: 400; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 14px; }
+.subtitle { font-family: 'Noto Serif KR', serif; font-size: 17px; font-weight: 300; color: #777; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; padding: 3px 12px; border-radius: 100px; background: #f5f5f5; color: #888; font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
+.step { display: flex; gap: 24px; margin-bottom: 52px; align-items: flex-start; }
+.step-num { width: 32px; height: 32px; border-radius: 50%; background: #2C3B2D; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 12px; flex-shrink: 0; margin-top: 6px; }
+.step-body { flex: 1; }
+.step-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 400; margin-bottom: 16px; line-height: 1.4; letter-spacing: -0.01em; }
+.step-body p { color: #444; margin-bottom: 14px; font-size: 15px; line-height: 1.95; }
+.callout { background: #f9f9f9; border-left: 2.5px solid #111; padding: 18px 22px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+.callout-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; }
+.callout p { font-size: 14px; color: #333; line-height: 1.8; margin: 0; }
+blockquote { margin: 28px 0; padding: 0 0 0 24px; border-left: 1.5px solid #ddd; }
+blockquote p { font-family: 'Noto Serif KR', serif; font-size: 17px; font-style: italic; color: #333; line-height: 1.8; margin-bottom: 8px; }
+blockquote cite { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa; font-style: normal; letter-spacing: 0.06em; }
+.haiku { text-align: center; padding: 32px 24px; margin: 28px 0; background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; }
+.haiku p { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 300; color: #222; line-height: 2.2; margin: 0; }
+.haiku cite { display: block; margin-top: 16px; font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; letter-spacing: 0.08em; }
+.concept { display: flex; border: 1px solid #f0f0f0; border-radius: 12px; overflow: hidden; margin: 24px 0; }
+.concept-term { background: #111; color: #fff; padding: 20px 22px; display: flex; align-items: center; justify-content: center; min-width: 120px; }
+.concept-term span { font-family: 'Noto Serif KR', serif; font-size: 16px; writing-mode: vertical-rl; letter-spacing: 0.1em; }
+.concept-def { padding: 20px 22px; flex: 1; }
+.concept-def .term-en { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
+.concept-def p { font-size: 14px; color: #444; line-height: 1.8; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 24px 0; }
+.col-card { background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; padding: 20px 22px; }
+.col-card h3 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 14px; }
+.col-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.col-card ul li { font-size: 14px; color: #444; padding-left: 16px; position: relative; line-height: 1.6; }
+.col-card ul li::before { content: '—'; position: absolute; left: 0; color: #ccc; }
+.col-card p { font-size: 14px; color: #444; line-height: 1.75; margin: 0; }
+.cta-box { background: #2C3B2D; border-radius: 16px; padding: 40px; text-align: center; margin-top: 64px; }
+.cta-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #7a9c7b; margin-bottom: 16px; }
+.cta-text { font-family: 'Noto Serif KR', serif; color: #f0ece4; font-size: 20px; font-weight: 300; line-height: 1.7; margin-bottom: 28px; }
+.cta-sub { font-size: 13px; color: #7a9c7b; line-height: 1.7; }
+.footnote { font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; letter-spacing: 0.06em; margin-top: 64px; padding-top: 24px; border-top: 1px solid #f5f5f5; }
+.footnote p { margin-bottom: 6px; font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; }
+p { color: #444; margin-bottom: 16px; }
+.section-intro { font-size: 15px; color: #555; line-height: 1.95; margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid #f5f5f5; }
+@media (max-width: 600px) { h1 { font-size: 26px; } .two-col, .three-col { grid-template-columns: 1fr; } .concept { flex-direction: column; } .concept-term { writing-mode: horizontal-tb; min-width: auto; } .concept-term span { writing-mode: horizontal-tb; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 브레드크럼 -->
+  <nav class="breadcrumb">
+    <a href="#">슬로어</a>
+    <span class="sep">/</span>
+    <a href="#">작가살롱 1기</a>
+    <span class="sep">/</span>
+    <span>4주차</span>
+  </nav>
+
+  <!-- 아티클 헤더 -->
+  <header class="article-header">
+    <div class="meta">
+      <span class="badge badge-salon">Salon</span>
+      <span class="dot">·</span>
+      <span class="meta-text">Roland Barthes · 글쓰기의 우회</span>
+    </div>
+    <h1>데투르</h1>
+    <p class="subtitle">쓰지 않는 시간은 글쓰기의 반대편이 아니라,<br>글쓰기가 다시 돌아오는 다른 경로다</p>
+    <div class="tags">
+      <span class="tag">Détour</span>
+      <span class="tag">Otium</span>
+      <span class="tag">무위</span>
+      <span class="tag">Roland Barthes</span>
+      <span class="tag">Rimbaud</span>
+      <span class="tag">Rousseau</span>
+    </div>
+  </header>
+
+  <!-- 도입 -->
+  <p class="section-intro">
+    롤랑 바르트는 묻는다: 뜨거운 욕망을 가진 자가 어떻게 글을 쓰지 않을 수 있는가. 그리고 역방향에서 바라보기를 제안한다. 쓰지 않는 것은 글쓰기의 포기가 아니라, 압력이 너무 세기 때문에 생겨나는 필연적 우회—<em>데투르(Détour)</em>. 그 우회의 세 경로를 따라가 본다.
+  </p>
+
+  <!-- 0. 전제: 정체는 준비다 -->
+  <div class="step">
+    <div class="step-num">0</div>
+    <div class="step-body">
+      <h2 class="step-title">정체(停滯)는 준비다 — 니코스 카잔차키스</h2>
+      <p>글 쓰는 사람이 억압되고 불행한 숙명을 사는 것처럼 보인다. 담고 싶은 것은 많은데, 어휘라는 껍질은 너무 견고하다. 그 힘든 고뇌들이 '불행한 숙명'이다.</p>
+      <p>그러나 카잔차키스가 말하는 것은 이것이다: 내적인 격렬한 흐름이 정체되어 있을 수 있다. 그 정체는 좌절이 아니라 다음 폭발을 준비하는 시간이다. 어휘로 표현되는 순간, 그것은 폭탄처럼 터져 안에 갇힌 영혼을 해방시킨다.</p>
+      <div class="callout">
+        <div class="callout-label">바르트의 역방향 독해</div>
+        <p>쓰는 사람은 내적 격렬함을 어휘의 껍질 안에 가둔다. 멈춰 있는 것처럼 보이고 쓰지 않는 것처럼 보이지만—이것 또한 글쓰기의 본질이다. 우회는 글쓰기의 반대편이 아니라, 글쓰기가 다시 돌아오는 다른 이름이다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 세 경로 개요 -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h2 class="step-title">우회의 세 가지 경로</h2>
+      <p>바르트는 글쓰기를 우회하는 경로를 세 가지로 분류한다. 모두 돌아가는 길이지만, 각각 다른 방식으로 글쓰기로 귀환한다.</p>
+
+      <div class="three-col">
+        <div class="col-card">
+          <h3>Paragraphie</h3>
+          <p>글쓰기를 완전히 단절하는 것. 욕망을 수절하듯 떠나보내는 행위. 랭보의 선택.</p>
+        </div>
+        <div class="col-card">
+          <h3>Agraphie</h3>
+          <p>열정을 가라앉히는 것. 압력을 내리고 자신만의 템포를 조절하는 지혜로운 우회.</p>
+        </div>
+        <div class="col-card">
+          <h3>Otium</h3>
+          <p>일상에서 벗어난 한가한 여가. 무위(無爲)의 상태에 접속하면서 글쓰기로 되돌아오는 경로.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 파라그라피: 랭보 -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h2 class="step-title">파라그라피 — 랭보의 침묵</h2>
+      <p>랭보의 시는 천재적이었다. 학계의 찬사가 쏟아졌다. 그리고 20살의 랭보는 글쓰기를 완전히 멈췄다. 아프리카로 떠났고, 탐험과 상업 활동에 몰두했다. 문학을 사랑했던 사람이 어떻게 그럴 수 있었을까.</p>
+
+      <p>키에르케고르가 아브라함의 예를 든다. 아들 이삭을 재물로 바치려 한 아브라함의 결정—논리로 설명할 수 없다. 신앙의 차원은 인과관계를 허락하지 않는다. 랭보도 마찬가지다. 언어의 한계, 자신이 표현할 수 없는 것이 너무 많아서 오히려 다른 것으로 우회했지만—</p>
+
+      <blockquote>
+        <p>침묵 자체가 언어다.</p>
+        <cite>— Maurice Blanchot, L'Espace littéraire</cite>
+      </blockquote>
+
+      <p>바르트는 이것을 억압이 아니라 주체의 살아있음으로 읽는다. 욕망을 향한 끝없는 갈망 때문에 취한 역설적 행위. 랭보가 이후 쓰지 않은 모든 삶이 그의 시를 더 강렬하게 만드는 여백이 되었다.</p>
+    </div>
+  </div>
+
+  <!-- 3. 아그라피: 아우구스티누스와 발자크 -->
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h2 class="step-title">아그라피 — 열정을 가라앉히는 앎</h2>
+      <p>아우구스티누스는 세 가지 리비도를 말한다: 관능욕, 지식욕, 지배욕. 이것들이 끊임없이 욕망을 일으킨다. 그러나 지식욕은 다른 두 욕망을 잠재우면서도 전체를 깨운다.</p>
+
+      <blockquote>
+        <p>원하는 것은 우리를 불사르고, 할 수 있는 것은 우리를 파괴한다. 하지만 안다는 것은 우리의 허약한 체질을 영원한 평정 상태에 놓아둔다.</p>
+        <cite>— Balzac, 바르트가 인용</cite>
+      </blockquote>
+
+      <div class="callout">
+        <div class="callout-label">앎의 역설</div>
+        <p>앎은 욕망을 무화시키는 것이 아니다. 무욕(無欲)은 욕망의 소멸이 아니라 가능성을 여는 것이다. 원하는 것과 할 수 있는 것이 대조되는 한에서만—그 긴장 안에서만—선(善)을 추구할 수 있다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 오티움: 루소 -->
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h2 class="step-title">오티움 — 루소의 한가로운 여가</h2>
+      <p>루소는 섬으로 간다. 스스로를 고립시키면서 '무한한 여가'를 자신에게 허락한다. 생각나는 대로 왔다 갔다 하고, 시시각각 계획을 변경하고, 평생 할 것처럼 시작해서 10분 만에 끝낸다. 허송세월처럼 보이는 그 시간이 그에게는 글쓰기를 향한 비타 노바였다.</p>
+
+      <div class="concept">
+        <div class="concept-term"><span>오티움</span></div>
+        <div class="concept-def">
+          <span class="term-en">Otium · 노동의 반대가 아닌 속박의 부재</span>
+          <p>부정되는 것은 노동이 아니라 속박이다. 쓸모없어 보이는 것, 아무것도 아닌 것에 몰두하면서 손을 움직이는 시간—글쓰기와 무관한 듯 보이지만 침묵의 형식으로 존재하는 것.</p>
+        </div>
+      </div>
+
+      <p>바르트가 말하는 콩볼로이(kombologi)—손에서 손으로 굴리는 그리스의 걱정 구슬처럼, 글쓰기와 무관한 행동을 하면서도 욕망을 잃어버리지 않고 거기 연결되어 있는 행위. 완전한 명상의 무(無)가 아니라, 손을 놀리면서 생겨나는 서양식 오티움.</p>
+    </div>
+  </div>
+
+  <!-- 5. 무위의 양면 -->
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h2 class="step-title">무위(無爲)는 글쓰기의 양면이다</h2>
+      <p>바르트는 결국 이렇게 말한다: 쓰지 않는 시간, 하이쿠의 여백 같은 빈 공간—이 무(無) 자체가 글쓰기의 한 양면이다. 글쓰기의 무 플러스 쓰는 행위, 이 둘이 합쳐져서 욕망이 자신의 글쓰기 실현을 이루어준다.</p>
+
+      <div class="haiku">
+        <p>평화로이 아무것도 하지 않은 채 앉아 있네<br>봄이 오고<br>풀은 저절로 자라나네</p>
+        <cite>— 바르트가 인용한 선시(禪詩)</cite>
+      </div>
+
+      <div class="two-col">
+        <div class="col-card">
+          <h3>쓰지 않는 시간의 본질</h3>
+          <ul>
+            <li>압력이 너무 셀 때의 필연적 경로</li>
+            <li>내적 격렬함이 고이는 시간</li>
+            <li>다음 폭발을 준비하는 여백</li>
+            <li>글쓰기 욕망의 엔진</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3>무위를 견디는 것</h3>
+          <ul>
+            <li>아무것도 아닌 것에 대한 경험을 환상화하기</li>
+            <li>쓸모를 내려놓는 연습</li>
+            <li>어린아이처럼 감각으로만 포착하기</li>
+            <li>하이쿠의 여백처럼 살기</li>
+          </ul>
+        </div>
+      </div>
+
+      <blockquote>
+        <p>진정으로 진지한 태도는 글쓰기를 영원히 지속되는 진지함의 수단으로 여기지 않는 것이다.</p>
+        <cite>— Susan Sontag, 바르트의 논의와 같은 맥락에서</cite>
+      </blockquote>
+
+      <p>쓰려고 하지 않을 때 가장 진실한 알맹이를 만질 수 있다. 랭보가 20살 이후 쓰지 않은 모든 삶이 그의 시를 더 강렬하게 만들었듯—삶의 무위야말로 우리가 쓰는 글을 빛나게 하는 배경이 된다.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-label">이번 주 살롱의 질문</div>
+    <p class="cta-text">지금 나의 데투르는 무엇인가.<br>쓰지 않는 그 자리에서 무슨 일이 일어나고 있는가.</p>
+    <p class="cta-sub">데투르는 글쓰기를 포기한 것이 아니다.<br>고여 있는 것들이 터질 수 있도록 흐름을 터주는 시간이다.</p>
+  </div>
+
+  <!-- 하단 주석 -->
+  <footer class="footnote">
+    <p>REF · Roland Barthes, <em>La Préparation du roman</em> (강의록, 1978–80) — 데투르, 파라그라피, 아그라피, 오티움</p>
+    <p>REF · Nikos Kazantzakis, <em>Report to Greco</em> (영혼의 자서전) — 내적 격렬함과 어휘의 껍질</p>
+    <p>REF · Søren Kierkegaard, <em>Fear and Trembling</em> (1843) — 아브라함과 신앙의 도약</p>
+    <p>REF · Maurice Blanchot, <em>L'Espace littéraire</em> (1955) — 침묵 자체가 언어</p>
+    <p>REF · Jean-Jacques Rousseau, <em>Confessions</em> — 오티움과 자발적 고립</p>
+    <p>REF · Augustine of Hippo — 관능욕·지식욕·지배욕의 세 리비도</p>
+    <p>SALON · 슬로어 작가살롱 1기 · 4주차 강의록</p>
+  </footer>
+
+</div>
+</body>
+</html>
