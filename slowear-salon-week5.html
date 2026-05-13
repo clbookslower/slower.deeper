@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비타 노바, 쓰는 사람으로 다시 태어나기 — 슬로어 작가 살롱 1기 5주차</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', sans-serif; background: #fff; color: #111; font-size: 16px; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+.page { max-width: 720px; margin: 0 auto; padding: 72px 24px 100px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #aaa; margin-bottom: 48px; }
+.breadcrumb a { color: #aaa; text-decoration: none; }
+.breadcrumb .sep { opacity: 0.4; }
+.article-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
+.meta { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.badge { font-family: 'DM Mono', monospace; font-size: 11px; padding: 3px 12px; border-radius: 100px; letter-spacing: 0.06em; }
+.badge-guide { background: #FAEEDA; color: #854F0B; }
+.badge-article { background: #E6F1FB; color: #185FA5; }
+.badge-salon { background: #EAF3DE; color: #3B6D11; }
+.dot { color: #ddd; font-size: 12px; }
+.meta-text { font-size: 12px; color: #999; font-family: 'DM Mono', monospace; }
+h1 { font-family: 'Noto Serif KR', serif; font-size: 34px; font-weight: 400; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 14px; }
+.subtitle { font-family: 'Noto Serif KR', serif; font-size: 17px; font-weight: 300; color: #777; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; padding: 3px 12px; border-radius: 100px; background: #f5f5f5; color: #888; font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
+.step { display: flex; gap: 24px; margin-bottom: 52px; align-items: flex-start; }
+.step-num { width: 32px; height: 32px; border-radius: 50%; background: #2C3B2D; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 12px; flex-shrink: 0; margin-top: 6px; }
+.step-body { flex: 1; }
+.step-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 400; margin-bottom: 16px; line-height: 1.4; letter-spacing: -0.01em; }
+.step-body p { color: #444; margin-bottom: 14px; font-size: 15px; line-height: 1.95; }
+.callout { background: #f9f9f9; border-left: 2.5px solid #111; padding: 18px 22px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+.callout-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; }
+.callout p { font-size: 14px; color: #333; line-height: 1.8; margin: 0; }
+blockquote { margin: 28px 0; padding: 0 0 0 24px; border-left: 1.5px solid #ddd; }
+blockquote p { font-family: 'Noto Serif KR', serif; font-size: 17px; font-style: italic; color: #333; line-height: 1.8; margin-bottom: 8px; }
+blockquote cite { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa; font-style: normal; letter-spacing: 0.06em; }
+.haiku { text-align: center; padding: 32px 24px; margin: 28px 0; background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; }
+.haiku p { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 300; color: #222; line-height: 2.2; margin: 0; }
+.haiku cite { display: block; margin-top: 16px; font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; letter-spacing: 0.08em; }
+.concept { display: flex; border: 1px solid #f0f0f0; border-radius: 12px; overflow: hidden; margin: 24px 0; }
+.concept-term { background: #111; color: #fff; padding: 20px 22px; display: flex; align-items: center; justify-content: center; min-width: 120px; }
+.concept-term span { font-family: 'Noto Serif KR', serif; font-size: 16px; writing-mode: vertical-rl; letter-spacing: 0.1em; }
+.concept-def { padding: 20px 22px; flex: 1; }
+.concept-def .term-en { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
+.concept-def p { font-size: 14px; color: #444; line-height: 1.8; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+.col-card { background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; padding: 20px 22px; }
+.col-card h3 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 14px; }
+.col-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.col-card ul li { font-size: 14px; color: #444; padding-left: 16px; position: relative; line-height: 1.6; }
+.col-card ul li::before { content: '—'; position: absolute; left: 0; color: #ccc; }
+.cta-box { background: #2C3B2D; border-radius: 16px; padding: 40px; text-align: center; margin-top: 64px; }
+.cta-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #7a9c7b; margin-bottom: 16px; }
+.cta-text { font-family: 'Noto Serif KR', serif; color: #f0ece4; font-size: 20px; font-weight: 300; line-height: 1.7; margin-bottom: 28px; }
+.cta-sub { font-size: 13px; color: #7a9c7b; line-height: 1.7; }
+.footnote { font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; letter-spacing: 0.06em; margin-top: 64px; padding-top: 24px; border-top: 1px solid #f5f5f5; }
+p { color: #444; margin-bottom: 16px; }
+.voice-card { background: #fff; border: 1px solid #ececec; border-radius: 12px; padding: 20px 22px; margin: 16px 0; }
+.voice-name { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #2C3B2D; margin-bottom: 8px; }
+.voice-card p { font-size: 14px; color: #444; line-height: 1.85; margin: 0; }
+@media (max-width: 600px) { h1 { font-size: 26px; } .two-col { grid-template-columns: 1fr; } .concept { flex-direction: column; } .concept-term { writing-mode: horizontal-tb; min-width: auto; } .concept-term span { writing-mode: horizontal-tb; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 브레드크럼 -->
+  <div class="breadcrumb">
+    <a href="#">슬로어 작가 살롱</a>
+    <span class="sep">/</span>
+    <span>1기</span>
+    <span class="sep">/</span>
+    <span>Week 05</span>
+    <span class="sep">/</span>
+    <span>2026.05.13</span>
+  </div>
+
+  <!-- 아티클 헤더 -->
+  <header class="article-header">
+    <div class="meta">
+      <span class="badge badge-salon">살롱</span>
+      <span class="dot">·</span>
+      <span class="meta-text">73min · 이경선 진행</span>
+    </div>
+    <h1>비타 노바,<br>쓰는 사람으로<br>다시 태어나기</h1>
+
+    <div class="tags">
+      <span class="tag">슬로어살롱</span>
+      <span class="tag">롤랑바르트</span>
+      <span class="tag">비타노바</span>
+      <span class="tag">신성화</span>
+      <span class="tag">필자</span>
+      <span class="tag">AI글쓰기</span>
+      <span class="tag">쓸데없는짓</span>
+    </div>
+  </header>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h2 class="step-title">프루스트의 이별 파티 — 신생은 작별부터 시작된다</h2>
+      <p>오늘 강의는 마지막 강의 전체를 통틀어 가장 핵심적인 파트다.</p>
+
+      <p>1909년 11월 27일 밤, 파리의 바리에테 극장. 마르셀 프루스트가 박스석 세 자리를 빌려 가장 가까운 친구들을 초대했다. 공연이 있고, 웃음이 있고, 아마 샴페인도 있었다. 그런데 이 자리를 마련한 진짜 이유가 따로 있었다 — 다음 날부터 그는 사라질 예정이었다. 사교계에서, 파티에서, 친구들의 일상적인 저녁에서. 그는 소설 안으로 들어가기로 결심했고, 그 전날 밤에 제대로 이별 의식을 치른 것이다.</p>
+
+      <blockquote>
+        <p>새로운 삶을 시작하기 전에 지금의 삶에 제대로 작별을 고했다는 것 — 소설을 쓰기 위해 떠나는 게 아니라, 이별을 충분히 치르고 나서야 떠났다는 것.</p>
+        <cite>강의 중 · 프루스트 일화 재인용</cite>
+      </blockquote>
+
+      <p>바르트는 이것을 <em>비타 노바(Vita Nova)</em>, 즉 신생이라고 부른다. 하나의 삶의 방식에서 다른 삶의 방식으로 되돌릴 수 없이 건너가는 것. 단테가 베아트리체를 잃고 나서, 미슐레가 스무 살 연하의 아테나이스를 만나고 나서, 바르트가 어머니를 잃고 나서 — 각자의 루비콘 강을 건넌 순간을 이 단어로 불렀다.</p>
+
+      <div class="concept">
+        <div class="concept-term"><span>비타 노바</span></div>
+        <div class="concept-def">
+          <span class="term-en">Vita Nova · 신생(新生)</span>
+          <p>단테의 「신생」에서 빌려온 개념. 되돌릴 수 없이 건너가는 지점 — 삶의 유형의 단절, 습관의 단절, 지금까지 나를 이루어온 정체성들과의 분열. 개종(conversion)에 가까운 어떤 것. 바르트는 이 신생의 형식으로 소설 쓰기를 선택했다.</p>
+        </div>
+      </div>
+
+      <p>T.S. 엘리엇이 「황무지」에서 썼다. <em>"순간적 단념의 끔찍한 오만."</em> 바르트가 이 구절을 끌어오면서 강조하는 것은 '두려움'이 아니라 '오만함'이라는 단어다. 새로운 삶을 선택한다는 건 조심스러운 행위가 아니다 — 지금의 나보다 더 나은 내가 될 수 있다고 믿는 뻔뻔함, 내 삶을 이렇게 걸어도 된다는 담대함이 필요하다.</p>
+
+      <div class="callout">
+        <div class="callout-label">세미나에서 나온 질문</div>
+        <p>여러분에게 그런 밤이 있었나요 — 이전의 어떤 나에게 작별을 고하고 다른 사람이 되기로 결심한 밤이. 꼭 글쓰기가 아니어도 됩니다. 삶의 방식이, 관계가, 일하는 방식이 바뀐 그 전날 밤.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h2 class="step-title">Je est un autre — 나만의 새로운 문법 창조</h2>
+      <p>1871년 5월, 열일곱 살 랭보가 친구에게 편지를 쓴다. "나는 생각한다 — 이 말은 틀렸소. 이렇게 말해야 할 거요. 사람들이 나를 생각한다. 나는 타인이다. <em>Je est un autre.</em>"</p>
+
+      <p>이 문장은 프랑스어 문법으로 틀렸다. 1인칭 주어 <em>Je</em>에 3인칭 단수 동사 <em>est</em>를 붙였다. 그러나 이것이 정확히 랭보가 말하려는 것이다 — 나는 더 이상 나의 소유가 아니다. 나를 쓰는 것은 나 바깥의 무언가다.</p>
+
+      <blockquote>
+        <p>쓰기로 결심하는 나는 새로운 나다. 완전히 총체적으로, 존재적으로 완전히 다른 나. 그게 솟아나서 써 내려갈 것이다.</p>
+        <cite>강의 중 · 랭보의 견자의 편지(1871) 해설</cite>
+      </blockquote>
+
+      <p>바르트는 쓰는 주체를 네 가지로 분류하는데, 신생의 결단은 그 중 하나를 선택하는 일이다. 세미나에서 진행자는 이렇게 풀어냈다 — "나를 쓰는 것이 나 바깥에 무언가다"라는 감각, 아직 존재하지 않는 작가가 지금의 나를 써나가는 것 같은 그 낯선 감각이 바로 신생의 순간이라고.</p>
+
+      <div class="two-col">
+        <div class="col-card">
+          <h3>신생 이전의 나</h3>
+          <ul>
+            <li>인간(Persona) — 밥 먹고 유튜브 보는 나</li>
+            <li>문인(Scriptor) — 작가라는 이미지를 가진 나</li>
+            <li>집필자(Auctor) — 쓴 것에 서명하는 나</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3>신생 이후의 중심</h3>
+          <ul>
+            <li>필자(Scribens) — 지금 이 순간 쓰고 있는 나</li>
+            <li>나머지 셋은 사라지지 않고 필자를 중심으로 재배치된다</li>
+            <li>문인(이미지)이 필자(실천)를 방해하지 않도록</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>바르트가 직접 겪은 일을 썼다. 기차에서 누군가가 그를 완성된 대가로 여기고 끌어내리려 했다. 바르트는 속으로 알았다 — 잘못 겨냥하고 있다. 나는 스스로를 작가로 여기지 않는다, 쓰고자 하는 누군가로 여겨야 한다. 인정받고 싶은 마음이 커질수록 실제로 쓰는 시간은 줄어든다. <em>문인을 지키느라 필자를 잃는</em> 것이다.</p>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h2 class="step-title">매끈한 시간과 관리의 전쟁</h2>
+      <p>신생이 요청하는 것이 있다 — 바르트는 그것을 <em>매끈한 시간(temps lisse)</em>이라고 부른다. 걸림돌도 마감도 없는 시간. 약속도 해야 할 일도 없는 시간. 세미나에서 이 표현이 나오자 참석자들 사이에서 웃음과 탄성이 동시에 터졌다. "이 표현이 너무 작가답다."</p>
+
+      <p>그러나 현실은 관리(gestion)다. 바르트가 24시간을 냉정하게 계산했다. 자고 먹고 씻는 데 열 시간, 창조적 작업에 다섯 시간 — 그런데 관리에도 정확히 다섯 시간이 들어간다. 번역 검토, 원고 수정, 편지, 약속, 인터뷰. 쓴 것들을 유지하고 관리하는 일들이 창조와 똑같은 시간을 먹는다.</p>
+
+      <blockquote>
+        <p>어제는 여섯 통! 그저께도 그만큼이었지! 한심한 갈겨쓰기가 내 시간을 잡아먹고 있어.</p>
+        <cite>플로베르, 조카에게 보낸 편지 · 강의 인용</cite>
+      </blockquote>
+
+      <p>150년이 지났는데 너무 공감이 간다. 이름만 바뀌었다 — 편지가 카톡이 되고, 조카가 인스타그램 DM이 되었을 뿐. 세미나에서 한 참석자는 이렇게 말했다 — 쓸 여유를 못 찾는 게 의지 부족이 아닐 수 있다. 쓰지 않기 위해 오늘 할 일을 자꾸 늘리는 것 아닌가. 청소도 해야 하고, 누구에게 연락도 해야 하고 — 그 편지 쓰기처럼.</p>
+
+      <div class="callout">
+        <div class="callout-label">거절하기는 타동사다</div>
+        <p>바르트는 편지가 왜 이렇게 힘든지 문법으로 설명한다. 거절하기는 타동사다 — 뭔가를 거절하는 행위가 아니라 누군가에게 거절하는 행위다. 관리를 못 줄이는 게 의지 부족이 아니라, 좋은 관계를 끊지 못해서다. 내가 소중하게 여기는 사람에게 거절하는 게 어렵기 때문이다.</p>
+      </div>
+
+      <p>바르트는 이것을 "작품의 이기주의"라고 직접 부른다. 그러나 이 이기주의가 없다면 작품도 없다. 무라카미 하루키가 아침에 달리고, 일찍 자고, 스스로 아무도 비집고 들어오지 못하는 루틴을 만든 것도 — 스스로를 신성화하는 방편이기도 하다고 세미나에서 이야기가 나왔다. 루틴이라는 이름으로 표명하면서 <em>그 시간에 나는 너를 터치하지 않는다</em>고 선언하는 것.</p>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h2 class="step-title">쓰는 나를 신성화하기 — 자격이 있다고 믿는 것</h2>
+      <p>오늘 강의의 핵심. 만들어야 할 작품을 위해 신성화해야 하는 것은 작품이 아니다 — <em>자기 자신</em>이다. 만들고 있는 사람으로서의 자기 자신.</p>
+
+      <p>신성화라는 말이 낯설고 거창하게 들린다. 그런데 이 개념을 이렇게 이해하면 된다 — 자신이 쓸 자격이 있다고 내가 스스로를 믿어주는 것. 더 정확하게는, 이 일에 내 삶을 헌신할 만큼 내 삶이 충분히 소중하다고 믿는 것.</p>
+
+      <blockquote>
+        <p>자기 자신을 대면할 때 강한 사람의 태도를 취해야 한다. 그것이 강한 사람이 되는 방법이다.</p>
+        <cite>플로베르 · 강의 인용</cite>
+      </blockquote>
+
+      <p>세미나에서 이 대목이 가장 많은 반응을 끌어냈다. 잘 쓰느냐 못 쓰느냐의 기준과 관계없이 — 쓰고 있는 나 자신을 무조건 대단하게 여겨야 한다는 말. 충분히 공부했을 때, 충분히 경험했을 때, 충분히 준비됐을 때 쓰겠다는 생각 — 그 충분함은 영원히 오지 않는다. 준비가 됐을 때 태도를 취하는 게 아니라, <em>태도를 취함으로써 준비가 되어가는</em> 것이다.</p>
+
+      <div class="concept">
+        <div class="concept-term"><span>신성화</span></div>
+        <div class="concept-def">
+          <span class="term-en">Sanctification · 작업자를 향한 것</span>
+          <p>이미 완성된 작가 이미지(문인)를 향한 신성화가 아니다. 지금 쓰고 있는 작업자 — 필자 — 를 향한 신성화다. 그리고 그 끝에 있는 것은 자기 과시가 아니라 은폐다. 작업자는 완수한 뒤 사라지고, 작품만 남는다.</p>
+        </div>
+      </div>
+
+      <p>이 신생에는 이별 의식이 필요하다는 것도 강조됐다. 프루스트처럼. 다른 사람들이 "그렇게까지 해?"라고 이야기할 때 내가 나를 믿어주는 것. 더 나은 내가 될 수 있다고 믿어주는 뻔뻔함. 세미나에서는 이렇게 표현됐다 — "신성한 오만함의 오늘을 살 수 있다면, 현실을 단절할 수 있는 열망을 실현할 수 있지 않을까."</p>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h2 class="step-title">참석자들이 발견한 것 — 현장의 목소리들</h2>
+      <p>강의 이후 자유 토론에서 나온 이야기들. 각자의 삶 속에서 신생의 개념이 어떻게 착지했는지.</p>
+
+      <div class="voice-card">
+        <div class="voice-name">참석자 A</div>
+        <p>글쓰기 하고 있는 자기 자신에게 "잘 쓸 때만 칭찬받을 자격이 있다"는 생각을 하니까, 글 쓴다고 당당하게 말하기가 어려웠어요. 오늘 본문이 위로가 됐어요 — 잘 쓰느냐 못 쓰느냐와 관계없이 쓰고 있는 나 자신을 무조건 대단하게 여겨야 한다는 이야기를.</p>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-name">참석자 B — 프루스트의 인간적인 면</div>
+        <p>재밌었던 것은 프루스트가 위층에 사는 이웃에게 털신을 선물했다는 소소한 이야기예요. 그리고 편지 쓰기 대목 — TV도 스마트폰도 없던 그때도 방해하는 것들이 있었구나. 쓸데없는 내가 해야 할 일을 만들어놓고 글은 최대한 쓰지 않기 위해 to-do 리스트를 자꾸 늘리는 것 — 저도 오늘 그러고 있더라고요. 진짜 하고 싶은 건 이건데, 이걸 하지 않으려고 청소도 하고 연락도 하고.</p>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-name">참석자 C — 결혼과 창작의 삶</div>
+        <p>창작하는 사람에게 사회성을 일부러 죽이는 것 같은 독창성의 방어막이 필요하다는 부분이 재밌었어요. 어떻게 보면 나는 이런 특이한 사람이야, 이걸 브랜딩하는 것 같기도 하고. 그러다 문득 — 나는 결혼하는 게 맞을까, 이런 생각이 드는 거예요. 올해는 큰 방향성에 대해 고민을 많이 하게 되는 것 같아요.</p>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-name">참석자 D — 쓸데없는 짓의 가치</div>
+        <p>저는 20년이 넘게 아이들을 가르쳐왔는데, 여전히 내가 했던 것만 하는 것 같고, 사람들은 막 뭔가를 하고 있는 것 같아서 많이 갈등했어요. 오늘 강의 들으면서 — 쓸데없는 짓도 더 많이 해야겠다는 생각이 들었어요. 남편 눈에는 제가 매일 책 읽고 줌하고 글 쓰는 게 쓸데없는 일이지만, 이런 사람도 있어야 사회의 균형이 맞춰지지 않을까. 불멸이 되고 싶지 않으니까, 내 기억을 왜 가져가냐고 생각하니까 — 사라지기 전에 재미있는 일을 더 해도 될 것 같아요.</p>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-name">참석자 E — AI와 함께 글쓰기</div>
+        <p>남편의 소송 문서를 제가 직접 쓰고 나서, 딸이 AI에 한번 돌려서 비교해 줬어요. 제가 열심히 쓴 것보다 훨씬 정리가 잘 돼 있더라고요. 그런데 그대로 쓸 수는 없었어요 — 수정해야 할 부분들이 많았고. 결국 명령어를 내리는 건 우리가 하지 않으면 안 된다. 소스를 얼마나 잘 줘야만 원하는 쪽으로 가는구나. 협업처럼 잘 되면 좋겠다는 생각이 들었어요.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <h2 class="step-title">AI와 글쓰기 — 다섯 번째 나</h2>
+      <p>바르트가 네 개의 나(인간, 문인, 집필자, 필자)를 말했다면, 세미나에서는 다섯 번째 나에 대한 이야기가 나왔다 — AI라는 자아.</p>
+
+      <p>진행자는 클로드에 작가 살롱 지침과 커리큘럼을 세팅해두고, "오늘 5주차 강의안 줘"라는 한 마디만 치면 완성된 작업물이 나오는 실험을 하고 있다고 밝혔다. 5분도 안 걸린다. 산책할 때 핸드폰으로 일을 시켜놓고 확인만 하면 된다. 초안 짜기, 기획, 목차 작업, 대중 언어로 번역하기 — AI가 너무 잘해준다.</p>
+
+      <blockquote>
+        <p>매일매일 무료로 콘텐츠를 흘려보내는 것은 자동화하고, 그렇게 얻어진 플랫폼 위에 진짜 작품들 — 피라미드 — 은 별처럼 계속 놓아두면서. 사람들이 나를 매력적인 캐릭터로 계속 느낄 수 있게끔.</p>
+        <cite>세미나 · 진행자 발언 중</cite>
+      </blockquote>
+
+      <p>한 참석자는 이렇게 정리했다 — AI를 쓰는 것은 자율주행처럼 선택적으로 쓰면 된다. 운전 좋아하는 사람이 수동 모드를 쓰듯, 쓰는 즐거움이 있는 사람은 직접 쓰고, 상업적 글쓰기가 필요할 땐 AI에게 나를 복제해서 나스러운 글을 써달라고 시키는 것. 나다움을 찾는 데까지는 좋은 도구로, 이후에는 필자로서의 즐거움을.</p>
+
+      <p>그러나 핵심 질문도 남았다. AI의 도움을 받아 특이점을 거쳐도 괜찮은가 — 내가 당당할 수 있을까, 뻔뻔할 수 있을까. <em>내 힘으로</em> 한 번은 거쳐야 하지 않을까. 이 물음에 대한 답은 각자가 안고 가야 할 숙제로 남았다.</p>
+
+      <div class="callout">
+        <div class="callout-label">피라미드와 구석기 벽화</div>
+        <p>구석기 시대에 벽에 소를 그리면 소를 가진 것이라 믿었다 — 그림 자체가 현실이었다. 필자와 인간이 중첩된 상태. 피라미드는 창조의 끝단에서 불멸을 향한 추상이다. 그런데 피라미드만 가지고는 사람들의 감정이 이입되지 않는다. 피라미드를 꿈꾸고, 재료를 모아오고, 사람들과 함께 짓는 과정 — 그 일기 같은 공유 과정도 같이 있어야 피라미드도 팔리는 시대다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA 박스 -->
+  <div class="cta-box">
+    <div class="cta-label">Next Week · 종강, 그리고 신생</div>
+    <p class="cta-text">다음 주는 숙제가 없습니다.<br>가벼운 마음으로 오세요 — 이야깃거리 몇 가지를 카톡에 올려드릴게요.<br>오늘이 작가 살롱 1기의 실질적인 마지막 강의입니다.</p>
+    <p class="cta-sub">INCIPIT VITA NOVA. 신생이 시작됩니다.<br>무엇을 쓸지가 아니라 — 무엇인가가 쓰일 수 있는 삶의 공간을 열기로 결심하는 것.</p>
+  </div>
+
+  <!-- 하단 주석 -->
+  <div class="footnote">
+    <p>참고 — 롤랑 바르트, 「소설의 준비」(La Préparation du Roman) · 단테 알리기에리, 「신생」(La Vita Nuova) · T.S. 엘리엇, 「황무지」(The Waste Land), 1922 · 플로베르, 조카 Caroline에게 보낸 편지 · 수전 손택, 「은유로서의 질병」(Illness as Metaphor), 1978 · 주베르(Joseph Joubert), 사후 발견 노트 중</p>
+    <p style="margin-top: 8px;">녹취 원본 · 2026.05.13 수 오후 11:13 · 73분 54초 · clovanote.naver.com</p>
+  </div>
+
+</div>
+</body>
+</html>
