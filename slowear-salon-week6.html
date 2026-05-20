@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이상 자아 — 나는 내가 쓰는 것보다 더 가치가 있다 · 슬로어 작가 살롱 1기 6주차</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', sans-serif; background: #fff; color: #111; font-size: 16px; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+.page { max-width: 720px; margin: 0 auto; padding: 72px 24px 100px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #aaa; margin-bottom: 48px; }
+.breadcrumb a { color: #aaa; text-decoration: none; }
+.breadcrumb .sep { opacity: 0.4; }
+.article-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
+.meta { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.badge { font-family: 'DM Mono', monospace; font-size: 11px; padding: 3px 12px; border-radius: 100px; letter-spacing: 0.06em; }
+.badge-guide { background: #FAEEDA; color: #854F0B; }
+.badge-article { background: #E6F1FB; color: #185FA5; }
+.badge-salon { background: #EAF3DE; color: #3B6D11; }
+.dot { color: #ddd; font-size: 12px; }
+.meta-text { font-size: 12px; color: #999; font-family: 'DM Mono', monospace; }
+h1 { font-family: 'Noto Serif KR', serif; font-size: 34px; font-weight: 400; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 14px; }
+.subtitle { font-family: 'Noto Serif KR', serif; font-size: 17px; font-weight: 300; color: #777; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; padding: 3px 12px; border-radius: 100px; background: #f5f5f5; color: #888; font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
+.step { display: flex; gap: 24px; margin-bottom: 52px; align-items: flex-start; }
+.step-num { width: 32px; height: 32px; border-radius: 50%; background: #2C3B2D; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 12px; flex-shrink: 0; margin-top: 6px; }
+.step-body { flex: 1; }
+.step-title { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 400; margin-bottom: 16px; line-height: 1.4; letter-spacing: -0.01em; }
+.step-body p { color: #444; margin-bottom: 14px; font-size: 15px; line-height: 1.95; }
+.callout { background: #f9f9f9; border-left: 2.5px solid #111; padding: 18px 22px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+.callout-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; }
+.callout p { font-size: 14px; color: #333; line-height: 1.8; margin: 0; }
+blockquote { margin: 28px 0; padding: 0 0 0 24px; border-left: 1.5px solid #ddd; }
+blockquote p { font-family: 'Noto Serif KR', serif; font-size: 17px; font-style: italic; color: #333; line-height: 1.8; margin-bottom: 8px; }
+blockquote cite { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa; font-style: normal; letter-spacing: 0.06em; }
+.haiku { text-align: center; padding: 32px 24px; margin: 28px 0; background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; }
+.haiku p { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 300; color: #222; line-height: 2.2; margin: 0; }
+.haiku cite { display: block; margin-top: 16px; font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; letter-spacing: 0.08em; }
+.concept { display: flex; border: 1px solid #f0f0f0; border-radius: 12px; overflow: hidden; margin: 24px 0; }
+.concept-term { background: #111; color: #fff; padding: 20px 22px; display: flex; align-items: center; justify-content: center; min-width: 120px; }
+.concept-term span { font-family: 'Noto Serif KR', serif; font-size: 16px; writing-mode: vertical-rl; letter-spacing: 0.1em; }
+.concept-def { padding: 20px 22px; flex: 1; }
+.concept-def .term-en { font-family: 'DM Mono', monospace; font-size: 11px; color: #aaa; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
+.concept-def p { font-size: 14px; color: #444; line-height: 1.8; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+.col-card { background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; padding: 20px 22px; }
+.col-card h3 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 14px; }
+.col-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.col-card ul li { font-size: 14px; color: #444; padding-left: 16px; position: relative; line-height: 1.6; }
+.col-card ul li::before { content: '—'; position: absolute; left: 0; color: #ccc; }
+.cta-box { background: #2C3B2D; border-radius: 16px; padding: 40px; text-align: center; margin-top: 64px; }
+.cta-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #7a9c7b; margin-bottom: 16px; }
+.cta-text { font-family: 'Noto Serif KR', serif; color: #f0ece4; font-size: 20px; font-weight: 300; line-height: 1.7; margin-bottom: 28px; }
+.cta-sub { font-size: 13px; color: #7a9c7b; line-height: 1.7; }
+.footnote { font-family: 'DM Mono', monospace; font-size: 11px; color: #bbb; letter-spacing: 0.06em; margin-top: 64px; padding-top: 24px; border-top: 1px solid #f5f5f5; }
+p { color: #444; margin-bottom: 16px; }
+.voice-card { background: #fff; border: 1px solid #ececec; border-radius: 12px; padding: 20px 22px; margin: 16px 0; }
+.voice-name { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #2C3B2D; margin-bottom: 8px; }
+.voice-card p { font-size: 14px; color: #555; line-height: 1.85; margin: 0; }
+.section-divider { border: none; border-top: 1px solid #f0f0f0; margin: 56px 0; }
+.section-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #bbb; margin-bottom: 32px; }
+@media (max-width: 600px) { h1 { font-size: 26px; } .two-col { grid-template-columns: 1fr; } .concept { flex-direction: column; } .concept-term { writing-mode: horizontal-tb; min-width: auto; } .concept-term span { writing-mode: horizontal-tb; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 브레드크럼 -->
+  <nav class="breadcrumb">
+    <a href="#">슬로어</a>
+    <span class="sep">/</span>
+    <a href="#">작가 살롱 1기</a>
+    <span class="sep">/</span>
+    <span>6주차</span>
+  </nav>
+
+  <!-- 아티클 헤더 -->
+  <header class="article-header">
+    <div class="meta">
+      <span class="badge badge-salon">SALON</span>
+      <span class="dot">·</span>
+      <span class="meta-text">2026.05.20 — WEEK 6 / 6</span>
+    </div>
+    <h1>이상 자아</h1>
+    <p class="subtitle">나는 내가 쓰는 것보다 더 가치가 있다</p>
+    <div class="tags">
+      <span class="tag">롤랑 바르트</span>
+      <span class="tag">소설의 준비</span>
+      <span class="tag">자아 이상</span>
+      <span class="tag">이상 자아</span>
+      <span class="tag">잔여</span>
+      <span class="tag">글쓰기와 사랑</span>
+    </div>
+  </header>
+
+  <!-- 오프닝 인용 -->
+  <div class="haiku">
+    <p>나는 나 자신을 찬양하고, 나 자신을 노래한다,<br>
+    그리고 내게 속하는 것은 그대에게 속하는 것이기도 하다,<br>
+    왜냐하면 내게 속하는 모든 원자는 그대에게 속하는 것이기도 하니까.</p>
+    <cite>— 월트 휘트먼, 『풀잎』 「나 자신의 노래」</cite>
+  </div>
+
+  <!-- 도입 -->
+  <p>6주차이자 마지막 강의. 바르트는 이 강의 전체에서 가장 명확한 문장을 정식화한다. <strong>"나는 내가 쓰는 것보다 더 가치가 있다."</strong> 이 말을 이해하기 위해 그는 정신분석학 쪽으로 우회한다. 글쓰기와 상상계 사이의 변증법 속으로.</p>
+
+  <!-- 섹션 1 -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h2 class="step-title">두 개의 자아 — 자아 이상과 이상 자아</h2>
+      <p>프로이트가 제시하고 라캉이 발전시킨 짝 개념. <em>Ich-Ideal</em>(자아 이상)과 <em>Ideal-Ich</em>(이상 자아). 비슷해 보이지만 전혀 다른 두 심급이다.</p>
+
+      <div class="two-col">
+        <div class="col-card">
+          <h3>자아 이상 · Ich-Ideal</h3>
+          <ul>
+            <li>요구들의 장소</li>
+            <li>상징계, 언어, 타자의 요청</li>
+            <li>초자아와 달리 구속하지 않고 고무함</li>
+            <li>글쓰기의 편 — 언어화된 욕망</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3>이상 자아 · Ideal-Ich</h3>
+          <ul>
+            <li>주체가 나타나고자 하는 형태</li>
+            <li>상상계 — 라캉의 거울 단계</li>
+            <li>내가 되고 싶은 나의 이미지</li>
+            <li>글쓰기보다 더 가치 있다고 느끼는 잉여</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>두 자아 사이에는 미묘하고 일관된 균형이 유지된다. 이 균형이 흩어지면 주체의 불균형이 온다. 연애 상태가 그 예다 — 사랑하는 대상이 자아 이상이 있던 자리를 차지하는 순간, 글쓰기는 불가능해진다. 글쓰기는 사랑과 일치할 수 없다. 글쓰기는 사랑 이후에 온다.</p>
+
+      <div class="callout">
+        <div class="callout-label">강의실에서</div>
+        <p>"자아 이상이 글쓰기 쪽이고, 이상 자아가 상상계 — 더 가치 있는 거. 이 차이가 주체를 글쓰기 쪽으로 나아가게 하고, 무한정 글을 쓰도록 강요합니다."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 2 -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h2 class="step-title">나는 내가 쓰는 것보다 더 가치가 있다</h2>
+      <p>바르트가 이 강의 전체에서 가장 명확하게 정식화하는 문장. 자기 작품에 대한 불만과는 다른, 더 깊은 구조다. 카프카는 일기에 썼다:</p>
+
+      <blockquote>
+        <p>"나는 나의 노심초사 상태를 완전하게 기술하면서 그것을 일소하고자 하는 커다란 욕구를 가지고 있다. 그것을 종이에 깊이 각인하거나, 내가 쓰게 될 것이 나의 한계 내에서 완전하게 이해될 정도로 기술할 수 있기를 바라는 욕구도 그러하다. 그것은 예술적 욕구가 아니다."</p>
+        <cite>— 카프카, 일기</cite>
+      </blockquote>
+
+      <p>예술적 욕구 — 자아 이상의 편 — 가 아니라는 것. 이상 자아의 편. <em>완전하게</em>라는 요구가 거기서 온다.</p>
+
+      <p>글쓰기는 가치 부여하기(faire-valoir)다. 쓴다는 것 자체가 절대적으로 가치가 있다는 선언이다. 그런데 이 가치 부여하기는 은밀하게 실망감의 침투를 받는다. "나는 쓴다, 따라서 안심한다" — 그러나 동시에 선언한다: 내가 쓴 것은 나의 전부가 아니라고.</p>
+
+      <div class="callout">
+        <div class="callout-label">핵심 구조</div>
+        <p>이 구조는 영리하다. 의혹마저 가치 부여하기로 전환된다. 재주의 상실을 비장하게 선언하면서 일기를 쓰는 그 행위 자체로 나는 더 가치 있다고 선언하는 것이다. 글쓰기는 자기 자신을 잃을 수 없다. 패배의 글쓰기조차 글쓰기다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 3 -->
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h2 class="step-title">잔여 — 글쓰기가 포착하지 못한 것</h2>
+      <p>"나는 내가 쓰는 것보다 더 가치가 있다"는 말이 가리키는 것은 무엇인가. <strong>잔여(reste)</strong>다. 내가 아직 말하지 않은 것, 글쓰기에 외연적인 것, 나의 전체 가치를 보여주는 것. 글쓰기가 재포착해야 하는 이 잉여, 내가 새로이 무한정 쓰면서 탐사해야만 하는 집행유예 — 그것이 이상 자아이고, 이상 자아가 자아 이상에 부과하는 미래지향이다.</p>
+
+      <p>한 권을 쓰면 다음 책이 요청된다 — 같은 잔여가, 포착되지 않은 채로, 다시 글쓰기를 향해 손을 뻗는다. 글쓰기 욕망은 충족에 의해 해소되지 않는다. 잔여가 있는 한.</p>
+
+      <p>이것은 하이쿠의 여백과 같다. 쓰여진 것은 조금이지만, 그 여백 속에 담긴 것이 훨씬 크다. 쓰여진 조금이 자아 이상이라면, 비어 있는 무한 공간 — 사랑하는 영혼이 머무는 그곳 — 이 이상 자아다.</p>
+
+      <div class="callout">
+        <div class="callout-label">강의실에서</div>
+        <p>"이상 자아는 상상계여서 사랑의 무한한 공간입니다. 고갈시킬 수 없는 공간. 그래서 소설을 준비한다고 할 때, 그 준비의 의미가 이 사랑의 영혼, 이 하나의 공간이 자신은 더 가치가 있다고 생각하기 때문입니다."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 4 -->
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h2 class="step-title">사랑받기 위해 쓴다</h2>
+      <p>바르트는 이 강의에서 드물게 직접적으로 말한다. <em>"나는 사랑받기 위해 글을 씁니다. 몇몇 사람들로부터, 그러나 멀리서 사랑받기 위해서."</em> 찬사나 비판, 동의를 원해서가 아니라 — 사랑받기 위해서. 그리고 멀리서.</p>
+
+      <p>이 '멀리서'가 결정적이다. 글쓰기를 구속하는 자아 이상 밑에는 항상 이상 자아가 있다 — 사랑하고 싶다는, 사랑받고 싶다는 상상계의 요청. 이 요청이 있을 때 글쓰기는 기술을 넘어선다.</p>
+
+      <blockquote>
+        <p>"인간적인 다정한 감정을 가진 자들의 마음에 들어야 한다."</p>
+        <cite>— 파스칼 (바르트가 인용)</cite>
+      </blockquote>
+
+      <p>바르트는 이것을 인용하면서 말한다 — 글쓰기의 이상 자아는 항상 에로스를 아가페로 전환하려 한다. 개인적 사랑에서 일반적 사랑으로, 자기중심주의에서 타자와의 공감으로. 문학이 사랑과 항상 모종의 관계를 맺으며 계속 확장 속에 있는 이유가 여기에 있다.</p>
+
+      <div class="voice-card">
+        <div class="voice-name">— 살롱에서, 내면 일기에 관하여</div>
+        <p>"글쓰기를 통해 나는 나 자신에게 말하고 싶지만, 나는 사랑하면서 나에게 말하고 싶습니다. 내면 일기는 나를 위한 것 같아요. 내가 나를 사랑해 주기 위해서 쓰는 글. 자책하는 마음 아래를 파보면 결국 사랑하는 마음이 있거든요. 그 조그마한 것을 더 찾아내는 — 그게 사랑하면서 나에게 말하는 것 같아요."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 5 -->
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h2 class="step-title">소설을 향해 — 타자를 창조하는 것</h2>
+      <p>바르트가 이 강의 전체를 통해 준비해온 것이 여기서 귀결된다. 그가 소설이라고 부르는 것 — 그것은 역사적으로 결정된 장르보다 훨씬 넓다. 자기중심주의의 초월, 타자와의 공감(sym-pathie), 일종의 모방적 공감으로 향한 초월이 있는 모든 작품.</p>
+
+      <p>이상 자아가 자아 이상에 부과하는 요청은 두 가지다. 타자의 비참함을 입증하는 것 — 소외와 비탄, 언명되지 않은 채 저자의 관용을 요청하는 것. 그리고 타자의 힘을 입증하는 것. 카프카가 막스 브로트에게 보낸 편지에서 이런 장면을 묘사했다:</p>
+
+      <blockquote>
+        <p>"잠깐 낮잠을 자고 나서 눈을 떴을 때 나는 어머니가 발코니에서 자연스러운 목소리로 이렇게 묻는 것을 들었다. '뭐 하세요?' 한 여자가 정원에서 대답했다. '풀밭을 보고, 풀밭을 맛보고 있어요.' 그때 나는 사람들이 자신들의 삶을 확고하게 영위한다는 사실에 놀랐다."</p>
+        <cite>— 카프카, 막스 브로트에게 보낸 편지 / 진리의 현현</cite>
+      </blockquote>
+
+      <p>바르트는 이것을 "진리의 현현"이라 부른다. 가장 사소한 찰나의 묘사가 삶 전체에 대한 통찰이 된다. 소설은 정해진 문학 형식이 아니라, 이상 자아 — 사랑을 품은 상상계 — 를 글쓰기의 언어 위로 완전히 내던지는 형태다. 소설은 기투(企投), 즉 전진하는 작품이다.</p>
+
+      <div class="voice-card">
+        <div class="voice-name">— 살롱에서, 소설을 쓰는 것에 관하여</div>
+        <p>"내 얘기인데 에세이로 쓰는 것보다 소설이 뭔가 더 재미있고, 사소하지만 의미를 담을 수 있어요. 소설 속의 인물의 입을 빌려서 내가 삶에서 느꼈던 깨달음과 진리를 드러낼 수 있는 것 같아요. 부끄럽지 않게 말할 수 있는 거죠."</p>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-name">— 살롱에서, 매일 쓰기 시작한 것에 관하여</div>
+        <p>"지난 수업하고 나서 그냥 내 이야기를 써야 하는구나 — 그 생각이 들었어요. 소설을 쓰고 싶으면 내 얘기를 해야 되는구나. 그래서 매일 조금씩, 500자씩 써서 모아보니 8천 자가 됐어요. 가제는 '고양이'예요."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 6 -->
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <h2 class="step-title">굴처럼 — 강의의 끝</h2>
+
+      <blockquote>
+        <p>"나는 완전히 굴처럼 산다. 내 소설은 나를 붙잡고 있는 바위이다. 나는 세상사에 대해서는 아무것도 모른다."</p>
+        <cite>— 플로베르 (바르트가 인용)</cite>
+      </blockquote>
+
+      <p>굴은 바위에 붙어 있지만 안에 있는 것은 부드럽고 생생하다. 부동이지만 노동하는 것, 고요하지만 집착하는 것. "글쓰기 그 자체 내에서, 외부에서 볼 때는 부동으로 보이는 노동에 집착하는 힘." 이것이 바르트가 말하는 글쓰기의 자세다.</p>
+
+      <p>이 강의는 1979년 12월 15일에 이루어졌다. 『소설의 준비』 시리즈의 마지막 강의들 중 하나다. 바르트는 소설을 쓰겠다고 했고, 그 소설의 이름이 <em>비타 노바</em>였을 것이다. 소설은 쓰이지 않았다. 1980년 2월, 교통사고로 세상을 떠났다. 그러나 강의는 남았다. 잔여는 소진되지 않기 때문에, 글쓰기는 계속된다.</p>
+
+      <div class="haiku">
+        <p>"아주 오래되고, 아주 애매하지만, 질투가 나게 하는<br>하나의 실천 행위가 있는데, 이 행위의 의미는<br>마음의 신비에 깃들어 있다."</p>
+        <cite>— 말라르메 / 바르트가 강의를 닫으며 인용한 마지막 문장</cite>
+      </div>
+
+      <p>마음의 신비 안에. 그것을 다 말한 사람은 아직 없다. 그래서 우리는 계속 쓴다.</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 살롱 나눔 -->
+  <p class="section-label">SALON — 6주차 나눔</p>
+
+  <div class="voice-card">
+    <div class="voice-name">— 참여자 1</div>
+    <p>"자책하는 마음 아래를 파보면 결국 사랑하는 마음이 있더라고요. 내면 일기는 겉에 드러나는 나한테 말하는 거고, 사랑하면서 나에게 말하는 건 그 안에 있는 조그마한 걸 더 찾아내는 거예요. 쓰지 못했던 겨울을 지나왔는데, 내면 일기라면 나를 좀 더 사랑해 주는 글쓰기로 만들 수 있겠다 — 계속 쓰고 싶다는 생각이 들었어요."</p>
+  </div>
+
+  <div class="voice-card">
+    <div class="voice-name">— 참여자 2</div>
+    <p>"이번 작가 살롱 하면서 가장 컸던 생각이 그냥 뻔뻔해지자, 나 작가야 하고 그냥 쓰자는 거였어요. 그 마인드셋이 생기고 나서 인스타그램을 잠깐 지웠는데, 일주일 만에 분량이 늘었어요. 매일 조금씩 써서 모아보니 8천 자. 가제는 '고양이'예요 — 무서워하는데 그래서 쓰게 됐어요."</p>
+  </div>
+
+  <div class="voice-card">
+    <div class="voice-name">— 참여자 3</div>
+    <p>"글쓰기를 못 해서 불안했던 마음이 작가 살롱 시간에 오면 편안해졌어요. 고향에 온 것 같은, 안식처 같은 시간. 글을 쓸 때는 만족감이 큰데 못 쓸 때 불만이 쌓이고 더 피곤해지는 — 그 갈망만으로도, 그 하지 못한 나 자신만으로도 충분히 가치 있는 거였구나. 그 위안이 되게 고마웠어요."</p>
+  </div>
+
+  <div class="voice-card">
+    <div class="voice-name">— 참여자 4</div>
+    <p>"영화나 드라마를 보면서 어떻게 저런 이야기가 있어 했던 게, 지금은 저것도 충분히 가능한 이야기 아니면 실제로 비슷한 걸 누군가한테 듣게 되더라고요. 점점 허구와 현실의 경계가 흐려지면서 — 작가들이 100% 상상으로만 전개한 게 아닐 수도 있겠다는 생각이 드니까, 그냥 인생 자체가 소설인 게 아닐까요."</p>
+  </div>
+
+  <div class="voice-card">
+    <div class="voice-name">— 참여자 5</div>
+    <p>"모닝 페이지가 루틴이 되면서 매일 내 생각의 흐름을 읽을 수 있게 됐어요. 글쓰기라는 행위 자체도 철학적인 것들을 얘기할 수 있구나 — 이분도 그걸 하시는 거잖아요. 그러면 나는 내가 하는 분야에서 이런 구조로 얘기하는 사람이 될 수 있겠다는 생각도 해볼 수 있어서, 스스로는 절대 사보지 않았을 책을 읽게 된 것도요."</p>
+  </div>
+
+  <div class="voice-card">
+    <div class="voice-name">— 참여자 6</div>
+    <p>"저는 스스로 글을 쓰지 않는 사람이라 생각했는데, 쓰라고 하면 썼어요. 숙제를 드립니다 하면 정말 열심히 하게 되더라고요. 글을 막 쏟아낸 거였는데, 거꾸로 그러면서 작가 마인드가 자꾸 심어지는 것 같아 이상하기도 하고 좋기도 했어요. 어떻게 될지 모르겠지만 — 공모전에 어떻게든 글을 써서 내보고 싶다는 생각이 생겼어요."</p>
+  </div>
+
+  <!-- CTA 박스 -->
+  <div class="cta-box">
+    <div class="cta-label">6주를 마치며</div>
+    <p class="cta-text">나는 내가 쓰는 것보다 더 가치가 있다.<br>쓰지 못하고 갈망하는 나도,<br>사랑의 작품을 품고 살아가는 나도.</p>
+    <p class="cta-sub">자아 이상의 요청(글쓰기)과 이상 자아의 잉여(사랑) 사이의 긴장이<br>우리를 무한정 쓰게 만든다. 잔여는 소진되지 않는다.</p>
+  </div>
+
+  <!-- 하단 주석 -->
+  <div class="footnote">
+    <p>텍스트 · 롤랑 바르트, 『소설의 준비』 (강의: 1979.12.15) — 『소설의 준비』 시리즈 최종강의군</p>
+    <p style="margin-top:8px;">참고 인용 · 월트 휘트먼 『풀잎』 / 카프카 일기 및 막스 브로트에게 보낸 편지 / 파스칼 / 플로베르 / 말라르메</p>
+    <p style="margin-top:8px;">슬로어 작가 살롱 1기 · 6주차 · 2026.05.20</p>
+  </div>
+
+</div>
+</body>
+</html>
